@@ -1,0 +1,20 @@
+version: '3'
+services:
+  web:
+    image: caddy
+    build:
+      context: docker
+    env_file:
+      - ./envs
+    # use acme-staging for dev env
+    # command: ["-ca", "https://acme-staging.api.letsencrypt.org/directory"]
+    command: ["-email", "${LETSENCRYPT_EMAIL}"]
+    volumes:
+      - ./srv/site:/srv/site
+      - ./srv/config/${CADDYFILE}:/srv/config/Caddyfile
+      - ${HOME}/.caddy:/root/.caddy
+      - ${HOME}/.config:/root/.config
+      - ${HOME}/.aws:/root/.aws
+    ports:
+      - 80:80
+      - 443:443

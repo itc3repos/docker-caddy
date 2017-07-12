@@ -1,0 +1,13 @@
+# see https://github.com/hacdias/caddy-hugo/blob/master/README.md
+
+docker-example.example.com {
+  tls {
+    dns route53
+  }
+
+  root /srv/site/public
+  browse
+
+  log stdout
+  errors stdout
+}

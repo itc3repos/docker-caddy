@@ -1,0 +1,25 @@
+CADDYFILE=Caddyfile
+SITE_FQDN=localhost
+
+# GCP DNS credentials: needed for google cloud DNS Challenge
+# Ref. https://godoc.org/github.com/xenolf/lego/providers/dns/googlecloud
+#CADDYFILE=Caddyfile.gcp
+#SITE_FQDN=docker-example.example.com
+GCE_PROJECT=proto-2016
+
+# AWS route53 credentials: needed for Route53 DNS Challenge
+# Ref. https://godoc.org/github.com/xenolf/lego/providers/dns/route53
+#CADDYFILE=Caddyfile.aws
+#SITE_FQDN=docker-example.example.com
+# AWS_PROFILE=my-profile
+# AWS_ACCESS_KEY_ID=
+# AWS_SECRET_ACCESS_KEY=
+# AWS_REGION=
+# Or
+# Shared credentials file (defaults to ~/.aws/credentials)
+# Or
+# Amazon EC2 IAM role
+
+LETSENCRYPT_EMAIL=${USER}@example.com
+
+

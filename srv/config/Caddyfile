@@ -1,0 +1,21 @@
+# see https://github.com/hacdias/caddy-hugo/blob/master/README.md
+# disable HTTPS to run the server on localhost
+localhost:80 {
+  tls off
+
+  root /srv/site/public
+  browse
+
+  log stdout
+  errors stdout
+}
+
+docker-example.example.com:443 {
+  tls self_signed
+
+  root /srv/site/public
+  browse
+
+  log stdout
+  errors stdout
+}
